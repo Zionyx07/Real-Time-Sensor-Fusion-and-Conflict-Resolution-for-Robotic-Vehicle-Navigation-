@@ -1,0 +1,72 @@
+[
+  {
+    "case": "1. Duplicate Event Detection",
+    "payload": {
+      "event_id": "EVT_DUP_001",
+      "sensor_type": "ULTRASONIC",
+      "timestamp": "2026-08-15T10:00:00.000Z",
+      "value": 1.50,
+      "location": { "x": 5, "y": 5 }
+    }
+  },
+  {
+    "case": "1. Duplicate Event Delivery (Re-submission)",
+    "payload": {
+      "event_id": "EVT_DUP_001",
+      "sensor_type": "ULTRASONIC",
+      "timestamp": "2026-08-15T10:00:00.000Z",
+      "value": 1.50,
+      "location": { "x": 5, "y": 5 }
+    }
+  },
+  {
+    "case": "2. Conflicting Readings (LIDAR vs ULTRASONIC)",
+    "payload": {
+      "event_id": "EVT_CNF_002",
+      "sensor_type": "LIDAR",
+      "timestamp": "2026-08-15T10:00:01.000Z",
+      "value": 1.22,
+      "location": { "x": 5, "y": 5 }
+    }
+  },
+  {
+    "case": "3. Late / Out-of-Order Event Insertion",
+    "payload": {
+      "event_id": "EVT_LAT_000",
+      "sensor_type": "INFRARED",
+      "timestamp": "2026-08-15T09:59:59.000Z",
+      "value": 2.10,
+      "location": { "x": 5, "y": 5 }
+    }
+  },
+  {
+    "case": "4. Missing Sensor Data (Isolated single sensor reading)",
+    "payload": {
+      "event_id": "EVT_DRP_004",
+      "sensor_type": "ULTRASONIC",
+      "timestamp": "2026-08-15T10:00:05.000Z",
+      "value": 3.40,
+      "location": { "x": 9, "y": 2 }
+    }
+  },
+  {
+    "case": "5. Midnight Boundary Transition Test",
+    "payload": {
+      "event_id": "EVT_MID_005",
+      "sensor_type": "LIDAR",
+      "timestamp": "2026-08-15T23:59:59.990Z",
+      "value": 0.85,
+      "location": { "x": 1, "y": 1 }
+    }
+  },
+  {
+    "case": "5. Midnight Boundary Transition Overlap",
+    "payload": {
+      "event_id": "EVT_MID_006",
+      "sensor_type": "LIDAR",
+      "timestamp": "2026-08-16T00:00:00.010Z",
+      "value": 0.82,
+      "location": { "x": 1, "y": 1 }
+    }
+  }
+]
